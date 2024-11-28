@@ -1,8 +1,6 @@
 package com.es.jwtSecurityKotlin.controller
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/rutas_publicas")
@@ -14,6 +12,12 @@ class RutaPublicaController {
         return "Este recurso puede ser accedido por cualquiera, es público \uD83D\uDE0E"
     }
 
+    @PostMapping("/recurso3")
+    fun insert(
+        @RequestBody recurso : String
+    ): String{
+        return recurso
+    }
 
 
 }
